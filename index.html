@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Check Point Azure Lab 3</title>
 
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: #db7093;
+    }
+
+    header {
+      background-color: #87cefa;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #4682b4;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px;
+      margin: 20px;
+      background: white;
+      border-radius: 10px;
+    }
+
+    img {
+      max-width: 3000px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Troubleshooting Lab</h1>
+    <p><b>Lab3 - High Avilability</b> </p>
+  </header>
+
+  <nav>
+    <a href="#Objective">Objective</a>
+    <a href="#PostDep">Post Deployment</a>
+    <a href="#Notes">Lab Notes</a>
+    <a href="#Guidelines">Guidelines</a>
+  </nav>
+
+  <!-- Image Section -->
+  <section>
+    <h2>Topology</h2>
+    <!-- IMPORTANT: replace filename with your image name -->
+    <img src="Lab_topology.png" style="width: 75%; height: auto alt="Topology">
+  </section>
+
+  <section id="Objective">
+    <h2>Objective</h2>
+    <p>This lab will simulate an issue with a customer's environment.</p>
+    <ul>
+        <li>Following some cloud maintenance on the customer side, the customer can no longer reach their web server</li>
+        <li>The customer hasn't had a chance to check anything yet</li>
+    </ul>
+    <p>Lab objectives</p>
+    <ul>
+        <li>Connecting the the Web Browser uses the frontend load balancer IP (frontend-lb)</li>
+        <li>Connecting to the web browser with HTTP will show a simple LAMP page</li>
+        <li>Note: The connection is only HTTP. HTTPS will not work</li>
+        <li><b>Goal:</b>
+         <ul>
+           <li>Find the root cause of the issue</li>
+           <li>Resolve the issue and manage to connect via HTTP to the web server</li>
+         </ul>
+        </li>
+        <br>
+    </ul>
+  </section>
+  
+  <section id="PostDep">
+
+    <h2>Post Deployment Actions</h2>
+
+    <h3>Step 1</h3>
+    <p>Make sure the MGMT server has finished FTW.</p>
+    <ul>
+        <li>Connect with SSH to the MGMT server</li>
+        <li>If you are in expert mode, the machine is done with FTW. If not, wait until the VM finishes FTW and automatically reboots again.</li>
+        <li>Check that the MGMT is completely up by running <code>api status</code>  |  Do not proceed forward before this is ready!</li>
+    </ul>
+
+    <h3>Step 2</h3>
+    <p>Run the Auto-MGMT script.</p>
+    <ul>
+        <li><b>Note: In SmartConsole this lab will be called AzureLab1, this is correct and you can ignore the naming scheme </b></li>
+        <li>Connect with SSH to the MGMT server</li>
+        <li>Connect to the Azure portal using the credential proivded in the lab environment tab</li>
+        <li>Run the following command on the MGMT server: <code>/var/log/automgmt.sh</code></li>
+        <li>Following the script prompt, fill in the Gaia version "R82.10", the public IPs of the cluster members as they are written in Azue portal and the private IP of the web server</li>
+        <li>Once the script is done, connect to SmartConsole and open the cluster properties</li>
+        <li>Open the network topology tab for eth1 and change the topology to "Override"</li>
+        <img src="override.png" style="width: 30%; height: auto; display: block; margin-left: 0; margin-right: alt="override">
+        <li>Push policy</li>
+        <br>
+        <li><b>Note: Changing the topology to "override" is not necessary a real world scenario. This step is there to fix a lab automation issue.</b></li>
+    </ul>
+
+  </section>
+  
+  <section id="Notes">
+    <h2>Lab Notes</h2>
+    <p>Credentials:</p>
+    <ul>
+        <li>CP VMs - User: <b>admin</b> | Password: <b>Checkpoint123</b></li>
+        <li>Web server - User: <b>cpuser</b> | Password: <b>Checkpoint123</b></li>
+    </ul>
+  </section>
+
+  <section id="Guidelines">
+    <h2>Guidelines</h2>
+    <ul>
+        <li>Confirm with your instructor on the solution for this lab</li>
+        <li>Once the lab is complete, please delete it by going to the menu in the top right corner in the CloudLabs page</li>
+        <li>Running the automgmt.sh script only works once, if it was done wrong, you must ask for a new lab</li>
+        <li>For any technical errors with the lab, please send a mail to edanl@checkpoint.com</li>
+    </ul>
+  </section>
+
+</body>
+</html>
