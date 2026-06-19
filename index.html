@@ -70,20 +70,21 @@
 
   <section id="Objective">
     <h2>Objective</h2>
-    <p>This lab will simulate an issue with a customer's environment.</p>
+    <p>This lab will be split to 3 diferent problems which you will need to solve in the assigned order</p>
     <ul>
-        <li>Following some cloud maintenance on the customer side, the customer can no longer reach their web server</li>
-        <li>The customer hasn't had a chance to check anything yet</li>
+        <li>Following some critical failures in the customer's environment, thye have redeployed a new managment server and have redeployed thier VMSS solution via terraform</li>
+        <li>The customer isa direct customer and has different issues following the redeployment</li>
     </ul>
+    <h3>Lab 4 - Problem A</h3>
+    
     <p>Lab objectives</p>
     <ul>
-        <li>Connecting the the Web Browser uses the frontend load balancer IP (frontend-lb)</li>
-        <li>Connecting to the web browser with HTTP will show a simple LAMP page</li>
-        <li>Note: The connection is only HTTP. HTTPS will not work</li>
+        <li>After configuring the CME the VMSS instance are not showing on SmartConsole</li>
+        <li>All the CME detailsinput in SmartConsole were checked and are correct</li>
         <li><b>Goal:</b>
          <ul>
            <li>Find the root cause of the issue</li>
-           <li>Resolve the issue and manage to connect via HTTP to the web server</li>
+           <li>Resolve the issue and have the gateways appear in SmartConsole</li>
          </ul>
         </li>
         <br>
@@ -116,7 +117,7 @@
         <li>In SmartConsole navigate to <b>Settings > CloudGuard Network</b></li>
         <li>Click on <b>Advanced</b> in the top right corner and change the Management name to <b>Lab-mgmt</b></li>
         <li>Add an Azure account and fill in the detaails of the account service principal located in the Lab environment page</li>
-        <img src="Serviceprincipal.png" style="width: 20%; height: auto; display: block; margin-left: 0; margin-right: alt="serviceprinicipal">
+        <img src="Serviceprincipal.png" style="width: 25%; height: auto; display: block; margin-left: 0; margin-right: alt="serviceprinicipal">
     </ul>
 
     <h3>Step 4</h3>
