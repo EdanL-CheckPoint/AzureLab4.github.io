@@ -73,18 +73,51 @@
     <p>This lab will be split to 3 diferent problems which you will need to solve in the assigned order</p>
     <ul>
         <li>Following some critical failures in the customer's environment, thye have redeployed a new managment server and have redeployed thier VMSS solution via terraform</li>
-        <li>The customer isa direct customer and has different issues following the redeployment</li>
+        <li>The customer is a direct customer and has different issues following the redeployment</li>
     </ul>
     <h3>Lab 4 - Problem A</h3>
     
     <p>Lab objectives</p>
     <ul>
-        <li>After configuring the CME the VMSS instance are not showing on SmartConsole</li>
-        <li>All the CME detailsinput in SmartConsole were checked and are correct</li>
+        <li>After configuring the CME, the VMSS instance are not showing on SmartConsole</li>
+        <li>All the CME details input in SmartConsole were checked and are correct</li>
         <li><b>Goal:</b>
          <ul>
            <li>Find the root cause of the issue</li>
            <li>Resolve the issue and have the gateways appear in SmartConsole</li>
+         </ul>
+        </li>
+        <br>
+    </ul>
+
+    <h3>Lab 4 - Problem B</h3>
+    
+    <p>Lab objectives</p>
+    <ul>
+        <li>Testing scale-out is not working.</li>
+        <li>Simulatiing high CPU on the gateways does not create a new instance</li>
+        <li><b>Goal:</b>
+         <ul>
+           <li>Simulate high CPU on by running the following command on both gateways 4 times (1 for each core of the VM): <code> yes > /dev/null &</code></li>
+           <li>Resolve the issue and have the gateways deploy a third instance due to high CPU utilization</li>
+           <br>
+           <li><b>Note: to stop the hgih CPU utilization run <code>#killall yes</code></b></li>
+         </ul>
+        </li>
+        <br>
+    </ul>
+
+    <h3>Lab 4 - Problem C</h3>
+    
+    <p>Lab objectives</p>
+    <ul>
+        <li>Customer has issue which requires adding a custom parameter to fwkern.conf</li>
+        <li>This means the customer needs this parameter to be present when a new instance appears during scale out</li>
+        <li><b>Goal:</b>
+         <ul>
+           <li>Find a method to add the following parameter to fwken.conf when a new instance scales out using CME: <code>Lab4=True</code></li>
+           <li>Test your soultion by scaling out and seeing if the parameter is there after deployment</li>
+           <br>
          </ul>
         </li>
         <br>
