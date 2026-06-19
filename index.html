@@ -105,17 +105,12 @@
     <h3>Step 2</h3>
     <p>Run the Auto-MGMT script.</p>
     <ul>
-        <li><b>Note: In SmartConsole this lab will be called AzureLab1, this is correct and you can ignore the naming scheme </b></li>
         <li>Connect with SSH to the MGMT server</li>
-        <li>Connect to the Azure portal using the credential proivded in the lab environment tab</li>
         <li>Run the following command on the MGMT server: <code>/var/log/automgmt.sh</code></li>
-        <li>Following the script prompt, fill in the Gaia version "R82.10", the public IPs of the cluster members as they are written in Azue portal and the private IP of the web server</li>
-        <li>Once the script is done, connect to SmartConsole and open the cluster properties</li>
+        <li>Once the script is done, connect to SmartConsole</li>
         <li>Open the network topology tab for eth1 and change the topology to "Override"</li>
-        <img src="override.png" style="width: 30%; height: auto; display: block; margin-left: 0; margin-right: alt="override">
-        <li>Push policy</li>
-        <br>
-        <li><b>Note: Changing the topology to "override" is not necessary a real world scenario. This step is there to fix a lab automation issue.</b></li>
+        <li>In SmartConsole navigate to <b>Settings > CloudGuard Network</b></li>
+
     </ul>
 
   </section>
