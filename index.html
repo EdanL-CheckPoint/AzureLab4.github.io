@@ -108,10 +108,25 @@
         <li>Connect with SSH to the MGMT server</li>
         <li>Run the following command on the MGMT server: <code>/var/log/automgmt.sh</code></li>
         <li>Once the script is done, connect to SmartConsole</li>
+    </ul>
+
+    <h3>Step 3</h3>
+    <p>Conect the Azure Cloud account to CME</p>
+    <ul>
         <li>In SmartConsole navigate to <b>Settings > CloudGuard Network</b></li>
         <li>Click on <b>Advanced</b> in the top right corner and change the Management name to <b>Lab-mgmt</b></li>
         <li>Add an Azure account and fill in the detaails of the account service principal located in the Lab environment page</li>
         <img src="Serviceprincipal.png" style="width: 30%; height: auto; display: block; margin-left: 0; margin-right: alt="serviceprinicipal">
+    </ul>
+
+    <h3>Step 4</h3>
+    <p>Create a template for the VMSS environment</p>
+    <ul>
+        <li>In the Azure section where you connected the account, clikc on the new button of <b>Add template</b></b></li>
+        <li>Name the template <b>Lab-tn</b> choose the correct version and add the SIC password <b>Checkpoint123</b></li>
+        <li><b>Note: R82.10 might be missing from dropdown option, choose another option for now, after the gateways will be scanned by the CME, the version R82.10 will appear</b></li>
+        <li>Connect with SSH to the management server and run <code>tail -f /var/log/CPcme/cme.log</code></li>
+        <li>Once you see the CME logs showing the gateways, the lab is ready</li>
     </ul>
 
   </section>
